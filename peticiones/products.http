@@ -22,23 +22,15 @@ content-type: application/json
     ],
     "tags": ["hi"],
     "gender": "women",
-    "images": ["img1", "img2"]
+    "images": ["img1", "img2", "img2", "img2"]
 }
 
 ### UPDATE
-PATCH {{hostname}}/{{resource}}/78f7966d-8608-46c5-ad9d-94fe0033cd6f HTTP/1.1
+PATCH {{hostname}}/{{resource}}/106cce85-8b63-4d0c-97ef-c49544cc1d16 HTTP/1.1
 content-type: application/json
 
 {
-    "description": "This is a product",
-    "price": 100,
-    "sizes": [
-        "S",
-        "M",
-        "L"
-    ],
-    "tags":["shirt", "tag"],
-    "gender": "unisex"
+    "images": ["img1", "img2", "img2", "img2"]
 }
 
 ### DELETE
