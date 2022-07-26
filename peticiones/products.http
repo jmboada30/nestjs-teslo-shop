@@ -5,14 +5,14 @@
 GET {{hostname}}/{{resource}}?limit=5 HTTP/1.1
 
 ### GET ONE
-GET {{hostname}}/{{resource}}/a HTTP/1.1
+GET {{hostname}}/{{resource}}/product_1 HTTP/1.1
 
 ### CREATE
 POST {{hostname}}/{{resource}} HTTP/1.1
 content-type: application/json
 
 {
-    "title": "Product 3",
+    "title": "Product 7",
     "description": "This is a product",
     "price": 200,
     "sizes": [
@@ -20,7 +20,6 @@ content-type: application/json
         "M",
         "L"
     ],
-    "slug": "ola k ace",
     "gender": "women"
 }
 
