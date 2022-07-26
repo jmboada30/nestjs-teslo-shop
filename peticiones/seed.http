@@ -1,4 +1,4 @@
-@hostname = http://localhost:3000/api/v2
+@hostname = http://localhost:3000/api
 @resource = seed
 
 ### POPULATE DB WITH DATA

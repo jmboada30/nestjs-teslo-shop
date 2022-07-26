@@ -2,7 +2,7 @@
 @resource = products
 
 ### GET ALL
-GET {{hostname}}/{{resource}}?limit=100 HTTP/1.1
+GET {{hostname}}/{{resource}}?limit=2 HTTP/1.1
 
 ### GET ONE
 GET {{hostname}}/{{resource}}/106cce85-8b63-4d0c-97ef-c49544cc1d16 HTTP/1.1
@@ -12,7 +12,7 @@ POST {{hostname}}/{{resource}} HTTP/1.1
 content-type: application/json
 
 {
-    "title": "Product 11",
+    "title": "Product 2",
     "description": "This is a product",
     "price": 200.99,
     "sizes": [

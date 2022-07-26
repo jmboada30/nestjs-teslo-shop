@@ -130,6 +130,14 @@ export class ProductsService {
     await this.productRepository.remove(product);
   }
 
+  async removeAll() {
+    try {
+      await this.productRepository.delete({});
+    } catch (error) {
+      this.handlerDBExceptions(error);
+    }
+  }
+
   private handlerDBExceptions(error: any) {
     if (error.code === '23505') throw new BadRequestException(error.detail);
 
