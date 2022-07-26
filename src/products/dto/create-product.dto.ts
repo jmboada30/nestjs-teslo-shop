@@ -24,6 +24,7 @@ export class CreateProductDto {
   description?: string;
 
   @IsString()
+  @IsOptional()
   slug?: string;
 
   @IsInt()

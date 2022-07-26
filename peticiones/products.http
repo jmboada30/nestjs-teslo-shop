@@ -5,23 +5,23 @@
 GET {{hostname}}/{{resource}}?offset=0 HTTP/1.1
 
 ### GET ONE
-GET {{hostname}}/{{resource}}/600 HTTP/1.1
+GET {{hostname}}/{{resource}}/a HTTP/1.1
 
 ### CREATE
 POST {{hostname}}/{{resource}} HTTP/1.1
 content-type: application/json
 
 {
-    "title": "Product 1",
+    "title": "Product 3",
     "description": "This is a product",
-    "price": 100,
+    "price": 200,
     "sizes": [
         "S",
         "M",
         "L"
     ],
-    "slug": "product-1",
-    "gender": "men"
+    "slug": "ola k ace",
+    "gender": "women"
 }
 
 ### UPDATE
@@ -42,5 +42,5 @@ content-type: application/json
 }
 
 ### DELETE
-DELETE {{hostname}}/{{resource}}/62de61671d322db089ffb39d HTTP/1.1
+DELETE {{hostname}}/{{resource}}/1fb79a73-8d4f-41c0-b33e-7390859de571 HTTP/1.1
 content-type: application/json
