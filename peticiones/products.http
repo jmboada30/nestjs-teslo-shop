@@ -12,7 +12,7 @@ POST {{hostname}}/{{resource}} HTTP/1.1
 content-type: application/json
 
 {
-    "title": "Product 7",
+    "title": "Product 8",
     "description": "This is a product",
     "price": 200,
     "sizes": [
@@ -20,15 +20,15 @@ content-type: application/json
         "M",
         "L"
     ],
+    "tags": ["hi"],
     "gender": "women"
 }
 
 ### UPDATE
-PATCH {{hostname}}/{{resource}}/62de61671d322db089ffb39d HTTP/1.1
+PATCH {{hostname}}/{{resource}}/78f7966d-8608-46c5-ad9d-94fe0033cd6f HTTP/1.1
 content-type: application/json
 
 {
-    "title": "Product 1",
     "description": "This is a product",
     "price": 100,
     "sizes": [
@@ -36,8 +36,8 @@ content-type: application/json
         "M",
         "L"
     ],
-    "slug": "product-1",
-    "gender": "men"
+    "tags":["shirt", "tag"],
+    "gender": "unisex"
 }
 
 ### DELETE
