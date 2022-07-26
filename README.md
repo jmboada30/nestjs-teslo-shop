@@ -4,7 +4,14 @@
 
 # TesloShop API
 
-Levantar DB
+1. Clonar proyecto
+2. Ejecutar `yarn install`
+3. Clonar `.env.example` y renombrarlo a `.env`
+4. Definir variables de entorno
+5. Levantar DB
+
 ```
 docker-compose up -d
 ```
+
+6. Levantar Server de desarrollo
