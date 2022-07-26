@@ -1,0 +1,46 @@
+@hostname = http://localhost:3000/api
+@resource = products
+
+### GET ALL
+GET {{hostname}}/{{resource}}?offset=0 HTTP/1.1
+
+### GET ONE
+GET {{hostname}}/{{resource}}/600 HTTP/1.1
+
+### CREATE
+POST {{hostname}}/{{resource}} HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Product 1",
+    "description": "This is a product",
+    "price": 100,
+    "sizes": [
+        "S",
+        "M",
+        "L"
+    ],
+    "slug": "product-1",
+    "gender": "men"
+}
+
+### UPDATE
+PATCH {{hostname}}/{{resource}}/62de61671d322db089ffb39d HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Product 1",
+    "description": "This is a product",
+    "price": 100,
+    "sizes": [
+        "S",
+        "M",
+        "L"
+    ],
+    "slug": "product-1",
+    "gender": "men"
+}
+
+### DELETE
+DELETE {{hostname}}/{{resource}}/62de61671d322db089ffb39d HTTP/1.1
+content-type: application/json
