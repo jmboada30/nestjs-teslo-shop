@@ -1,0 +1,5 @@
+@hostname = http://localhost:3000/api/v2
+@resource = seed
+
+### POPULATE DB WITH DATA
+GET {{hostname}}/{{resource}} HTTP/1.1

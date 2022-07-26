@@ -1,0 +1,30 @@
+@hostname = http://localhost:3000/api/v2
+@resource = pokemon
+
+### GET ALL
+GET {{hostname}}/{{resource}}?offset=0 HTTP/1.1
+
+### GET ONE
+GET {{hostname}}/{{resource}}/600 HTTP/1.1
+
+### CREATE
+POST {{hostname}}/{{resource}} HTTP/1.1
+content-type: application/json
+
+{
+    "no": 3,
+    "name": "Charmane"
+}
+
+### UPDATE
+PATCH {{hostname}}/{{resource}}/62de61671d322db089ffb39d HTTP/1.1
+content-type: application/json
+
+{
+    "no": 1,
+    "name": "Pikachu"
+}
+
+### DELETE
+DELETE {{hostname}}/{{resource}}/62de61671d322db089ffb39d HTTP/1.1
+content-type: application/json
