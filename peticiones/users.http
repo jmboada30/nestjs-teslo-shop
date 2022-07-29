@@ -1,0 +1,42 @@
+@hostname = http://localhost:3000/api
+@resource = auth
+
+
+### GET ALL
+GET {{hostname}}/{{resource}}?limit=2 HTTP/1.1
+
+### GET ONE
+GET {{hostname}}/{{resource}}/106cce85-8b63-4d0c-97ef-c49544cc1d16 HTTP/1.1
+
+### REGISTER
+POST {{hostname}}/{{resource}}/register HTTP/1.1
+content-type: application/json
+
+{
+    "email": "jhon3@mail.com",
+    "password": "Abc123!",
+    "fullName": "John Doe"
+}
+
+### LOGIN
+POST {{hostname}}/{{resource}}/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "jhon3@mail.com",
+    "password": "Abc123!"
+}
+
+### UPDATE
+PATCH {{hostname}}/{{resource}}/106cce85-8b63-4d0c-97ef-c49544cc1d16 HTTP/1.1
+content-type: application/json
+
+{
+    "email": "jhon@mail.com",
+    "password": "Abc123!",
+    "fullName": "John Doe"
+}
+
+### DELETE
+DELETE {{hostname}}/{{resource}}/1fb79a73-8d4f-41c0-b33e-7390859de571 HTTP/1.1
+content-type: application/json
