@@ -5,6 +5,7 @@ import {
   UnauthorizedException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { JwtService } from '@nestjs/jwt';
 
 import { Repository } from 'typeorm';
 import * as bcrypt from 'bcrypt';
@@ -13,7 +14,6 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { User } from './entities/user.entity';
 import { LoginUserDto } from './dto/login-user.dto';
 import { JwtPayload } from './interfaces/jwt-payload.interface';
-import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class AuthService {
@@ -37,7 +37,7 @@ export class AuthService {
 
       delete user?.password;
 
-      return { ...user, jwt: this.getJsonWebToken({ email: user.email }) };
+      return { ...user, jwt: this.getJsonWebToken({ uid: user.id }) };
     } catch (error) {
       this.handleError(error);
     }
@@ -47,7 +47,7 @@ export class AuthService {
     const { email, password } = loginUserDto;
     const user = await this.userRepository.findOne({
       where: { email },
-      select: ['email', 'password'],
+      select: { id: true, password: true, email: true },
     });
 
     if (!user) throw new UnauthorizedException('Creditentials invalid');
@@ -55,7 +55,7 @@ export class AuthService {
     if (!bcrypt.compareSync(password, user.password))
       throw new UnauthorizedException('Creditentials are not valid');
 
-    return { ...user, jwt: this.getJsonWebToken({ email: user.email }) };
+    return { ...user, jwt: this.getJsonWebToken({ uid: user.id }) };
   }
 
   private getJsonWebToken(payload: JwtPayload) {

@@ -2,18 +2,16 @@
 @resource = auth
 
 
-### GET ALL
-GET {{hostname}}/{{resource}}?limit=2 HTTP/1.1
-
-### GET ONE
-GET {{hostname}}/{{resource}}/106cce85-8b63-4d0c-97ef-c49544cc1d16 HTTP/1.1
+### TESTING PRIVATE ROUTE
+GET {{hostname}}/{{resource}}/me HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTkwOTA5MTUsImV4cCI6MTY1OTA5MDk3NX0.u-9gEoPUiofclS1ed3U-usX6tlj8bEEVscRBZep5_U0
 
 ### REGISTER
 POST {{hostname}}/{{resource}}/register HTTP/1.1
 content-type: application/json
 
 {
-    "email": "jhon@mail.com",
+    "email": "jhon1@mail.com",
     "password": "Abc123!",
     "fullName": "John Doe"
 }
@@ -23,7 +21,7 @@ POST {{hostname}}/{{resource}}/login HTTP/1.1
 content-type: application/json
 
 {
-    "email": "jhon3@mail.com",
+    "email": "jhon1@mail.com",
     "password": "Abc123!"
 }
 
