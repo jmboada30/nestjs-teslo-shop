@@ -20,6 +20,12 @@ export class AuthController {
     return this.authService.login(loginUserDto);
   }
 
+  @Get('check-auth-token')
+  @Auth()
+  checkAuthToken(@GetUser() user: User) {
+    return this.authService.checkUser(user);
+  }
+
   @Get('me')
   @Auth(ValiRoles.USER)
   private(

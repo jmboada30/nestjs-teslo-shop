@@ -58,6 +58,10 @@ export class AuthService {
     return { ...user, jwt: this.getJsonWebToken({ uid: user.id }) };
   }
 
+  async checkUser(user: User) {
+    return { ...user, jwt: this.getJsonWebToken({ uid: user.id }) };
+  }
+
   private getJsonWebToken(payload: JwtPayload) {
     return this.jwtService.sign(payload);
   }

@@ -2,6 +2,10 @@
 @resource = auth
 
 
+### CHECK USER
+GET {{hostname}}/{{resource}}/check-auth-token HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJiY2Q1OGZjZi1hZWYzLTQwZmQtYmJjNS03YmMwZDhlYTAzOGUiLCJpYXQiOjE2NTkxMTM0MzEsImV4cCI6MTY1OTExMzQ5MX0.5KSPyggfOq-_fK356r3JycfbVwHsAXp01olLl-_c6LI
+
 ### TESTING PRIVATE ROUTE (me)
 GET {{hostname}}/{{resource}}/me HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI3NTg0OTBkYS03N2ZmLTRhOWUtYTBjZC0zMWRmMjE2MTgwOGYiLCJpYXQiOjE2NTkxMDA0MjEsImV4cCI6MTY1OTEwMDQ4MX0.5k6c7HCxkA8cEZhzwFps55iyCzg-44_xjuIQ9wE7PSA
@@ -11,7 +15,7 @@ POST {{hostname}}/{{resource}}/login HTTP/1.1
 content-type: application/json
 
 {
-    "email": "jhon1@mail.com",
+    "email": "jhon@mail.com",
     "password": "Abc123!"
 }
 
@@ -34,7 +38,3 @@ content-type: application/json
     "password": "Abc123!",
     "fullName": "John Doe"
 }
-
-### DELETE
-DELETE {{hostname}}/{{resource}}/1fb79a73-8d4f-41c0-b33e-7390859de571 HTTP/1.1
-content-type: application/json
