@@ -2,9 +2,9 @@
 @resource = auth
 
 
-### TESTING PRIVATE ROUTE
+### TESTING PRIVATE ROUTE (me)
 GET {{hostname}}/{{resource}}/me HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTkwOTA5MTUsImV4cCI6MTY1OTA5MDk3NX0.u-9gEoPUiofclS1ed3U-usX6tlj8bEEVscRBZep5_U0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI3NTg0OTBkYS03N2ZmLTRhOWUtYTBjZC0zMWRmMjE2MTgwOGYiLCJpYXQiOjE2NTkwOTIxNzMsImV4cCI6MTY1OTA5MjIzM30.nEBMVsLlLsYuoEd5t0ogROULooi5WPLzwK-548jP5rU
 
 ### REGISTER
 POST {{hostname}}/{{resource}}/register HTTP/1.1

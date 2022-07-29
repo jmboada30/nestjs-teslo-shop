@@ -2,8 +2,10 @@ import { Controller, Post, Body, Get, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 
 import { AuthService } from './auth.service';
+import { GetUser } from './decorators/get-user.decorator';
 import { CreateUserDto } from './dto/create-user.dto';
 import { LoginUserDto } from './dto/login-user.dto';
+import { User } from './entities/user.entity';
 
 @Controller('auth')
 export class AuthController {
@@ -21,7 +23,7 @@ export class AuthController {
 
   @Get('me')
   @UseGuards(AuthGuard('jwt')) //* -> only for this route
-  private() {
-    return 'private';
+  private(@GetUser() user: User) {
+    return user;
   }
 }
