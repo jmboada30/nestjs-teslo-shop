@@ -3,6 +3,7 @@ import { AuthGuard } from '@nestjs/passport';
 
 import { AuthService } from './auth.service';
 import { GetUser } from './decorators/get-user.decorator';
+import { RawHeaders } from './decorators/raw-headers.decorator';
 import { CreateUserDto } from './dto/create-user.dto';
 import { LoginUserDto } from './dto/login-user.dto';
 import { User } from './entities/user.entity';
@@ -23,7 +24,11 @@ export class AuthController {
 
   @Get('me')
   @UseGuards(AuthGuard('jwt')) //* -> only for this route
-  private(@GetUser() user: User) {
-    return user;
+  private(
+    @GetUser() user: User,
+    @GetUser('email') email: string,
+    @RawHeaders() rawHeaders: string[],
+  ) {
+    return { user, email, headers: rawHeaders };
   }
 }
