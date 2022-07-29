@@ -1,8 +1,10 @@
+import { Product } from '../../products/entities/product.entity';
 import {
   BeforeInsert,
   BeforeUpdate,
   Column,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
@@ -28,6 +30,10 @@ export class User {
     default: ['user'],
   })
   roles: string[];
+
+  //* Productos que ha creado el usuario
+  @OneToMany(() => Product, (product) => product.user)
+  products: Product[];
 
   @BeforeInsert()
   checkFields() {
